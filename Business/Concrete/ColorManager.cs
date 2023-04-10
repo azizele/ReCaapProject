@@ -1,6 +1,5 @@
 ﻿using Business.Abstract;
 using DataAccess.Abstract;
-using DataAccess.Concrete.InMemory;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -10,20 +9,18 @@ using System.Threading.Tasks;
 
 namespace Business.Concrete
 {
-    public class CarManager : ICarService
+    public class ColorManager : IColorService
     {
-        ICarDal _carDal;
+        IColorDal _colorDal;
 
-        public CarManager(ICarDal carDal)
+        public ColorManager(IColorDal colorDal)
         {
-            _carDal = carDal;
+            _colorDal = colorDal;
         }
 
-        public List<Car> GetAll()
+        public List<Color> GetCarsByColorId()
         {
-            //İş kodları
-
-            return _carDal.GetAll();
+            return _colorDal.GetAll();
         }
     }
 }
